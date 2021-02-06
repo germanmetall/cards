@@ -4,11 +4,12 @@
   "scripts": {
     "ng": "ng",
     "start": "node server.js",
-    "build": "ng build",
+    "build": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "heroku-postbuild": "ng build"
+    "heroku-postbuild": "ng build",
+    "postinstall": "ng build --aot --prod"
   },
   "engines": {
     "node": "10.19.0",
@@ -16,9 +17,12 @@
   },
   "private": true,
   "dependencies": {
+    "@angular-devkit/build-angular": "~0.1100.5",
     "@angular/animations": "~11.0.5",
+    "@angular/cli": "~11.0.5",
     "@angular/common": "~11.0.5",
     "@angular/compiler": "~11.0.5",
+    "@angular/compiler-cli": "~11.0.5",
     "@angular/core": "~11.0.5",
     "@angular/forms": "~11.0.5",
     "@angular/platform-browser": "~11.0.5",
