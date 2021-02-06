@@ -8,7 +8,6 @@ export class CardStorage {
   	constructor(canLocallyStore=false) {
         this.canLocallyStore = canLocallyStore;
         this.cards = new Array();
-        console.log("CardStorage constructor!", this.cards);
   	}
 
     private canLocallyStore:boolean;
@@ -35,7 +34,6 @@ export class CardStorage {
     }
 
     public Add(cards:Array<Card> | Card):void{
-        console.log(this.Values(), cards);
         if(this.cards==null){
             this.cards = new Array<Card>();
         }
