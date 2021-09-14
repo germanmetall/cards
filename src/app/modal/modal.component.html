@@ -1,0 +1,39 @@
+<section class="modal">
+    <div class="modal__back"></div>
+    <article class="modal__content">
+
+        <form onsubmit="return false;">
+
+            <label>
+                <span>Header</span>
+                <input type="text" id="addCard__header" value="{{card.header}}">
+            </label>
+        
+            <label>
+                <span>Text</span>
+                <input type="text" required id="addCard__text" value="{{card.text}}">
+            </label>
+        
+            <label>
+                <span>Author</span>
+                <input type="text" id="addCard__author" value="{{card.author}}">
+            </label>
+        
+            <label>
+                <span>Background</span>
+                <input type="color" id="addCard__bg" value="#b0b0b0">
+            </label>
+            
+            <div>
+                <button (click)="makeAction()">OK</button>
+                <button type="reset">Reset</button>
+            </div>
+
+        </form>
+
+        <div class="modal__cross">
+            <img (click)="closeDialogBox()" src="../../assets/cross.svg"/>
+        </div>
+
+    </article>
+</section>

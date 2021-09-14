@@ -1,0 +1,20 @@
+<section class="card" [style.background]="this.getColor()">
+    <span class="card__header" *ngIf="card.header.trim()" title="{{card.header}}">
+        {{card.header}}
+    </span>
+    <br/>
+    <span class="card__text">
+        {{card.text}}
+    </span>
+    <br/>
+    <div class="card__footer">
+        <span class="card__author" *ngIf="card.author" title="{{card.author}}">
+            {{card.author}}
+        </span>
+        <span class="card__date">
+            {{card.date | date}}
+        </span>
+    </div>
+    <img class="card__bin" src="../../../assets/bin.svg" (click)="deleteCard()"/>
+    <img class="card__edit" src="../../../assets/edit.svg" (click)="editCard()"/>
+</section>

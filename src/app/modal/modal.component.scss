@@ -1,0 +1,115 @@
+@import "../../variables.scss";
+.modal{
+    position: fixed;
+    display: flex;
+    
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    
+    justify-content: space-around;
+    align-items: center;
+    transform: scale(0);
+    z-index: 100;
+    &__active{
+        animation: scaleModalIn 1s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
+    }
+    &__deactive{
+        animation: scaleModalOut 1s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
+    }
+    &__back{
+        position: inherit;
+        width: 100vw;
+        height: 100vh;
+        background: #000000;
+        opacity: 0.4;
+        z-index: 100;
+    }
+    &__content{
+        position: relative;
+        display: flex;
+        min-width: 40vw;
+        min-height: 30vh;
+    
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+
+        z-index: 101;
+        border: 8px solid map-get($map: $palette, $key: "accent");
+        border-radius: 16px;
+        background: map-get($map: $palette, $key: "background_1");
+        form{
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+        label{
+            box-sizing: border-box;
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            padding: 12px 16px;
+            font-size: 1.5rem;
+        }
+        button{
+            margin: 6px 16px;
+            font-size: 2rem;
+            padding: 12px 16px;
+            cursor: pointer;
+            transition: .5s;
+            background: transparent;
+            outline: none;
+            border: 2px solid #000;
+            border-radius: 8px;
+            &:nth-of-type(1){
+                background: #35b135;
+            }
+            &:nth-of-type(2){
+                background: #ff8080;
+            }
+            &:hover{
+                border: 2px solid map-get($map: $palette, $key: "accent");
+                color: map-get($map: $palette, $key: "background_1");
+            }
+        }
+    }
+    &__cross{
+        position: absolute;
+        top: -26px;
+        right: -26px;
+        cursor: pointer;
+        img{
+            width: 32px;
+            height: 32px;
+            padding: 6px;
+            border-radius: 50%;
+            background: #404040;
+        }
+    }
+}
+@keyframes scaleModalIn{
+    0%{
+        transform: scaleY(.005) scaleX(0);
+    }
+    50%{
+        transform: scaleY(.005) scaleX(1);
+    }
+    100%{
+        transform: scaleY(1) scaleX(1);
+    }
+}
+@keyframes scaleModalOut{
+    0% {
+        transform:scaleY(1) scaleX(1);
+    }
+    50% {
+        transform:scaleY(.005) scaleX(1);
+    }
+    100% {
+        transform:scaleY(.005) scaleX(0);
+    }
+}

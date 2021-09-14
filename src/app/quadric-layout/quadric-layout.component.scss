@@ -1,0 +1,58 @@
+.quadricLayout{
+    position: relative;
+    background: #404040;
+    width: 100vw;
+    height: 100vh;
+    &__screen{
+        position: absolute;
+        display: inline-block;
+        width: calc(50vw - 5vh);
+        height: 45vh;
+        background: #b0b0b0;
+        transition: .5s;
+        z-index: 2;
+        &:nth-of-type(1){
+            left: 0;
+            top: 0;
+            border-radius: 0 0 24px 0;
+        }
+        &:nth-of-type(2){
+            right: 0;
+            top: 0;
+            border-radius: 0 0 0 24px;
+        }
+        &:nth-of-type(3){
+            left: 0;
+            bottom: 0;
+            border-radius: 0 24px 0 0;
+        }
+        &:nth-of-type(4){
+            right: 0;
+            bottom: 0;
+            border-radius: 24px 0 0 0;
+        }
+    }
+    &__content{
+        box-sizing: border-box;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 100%;
+        padding: 24px;
+        overflow-y: hidden;
+        z-index: 1;
+        transition: .5s;
+        img{
+            max-width: 320px;
+            width: 100%;
+        }
+        &.minimised{
+            padding: 12px;
+        }
+        &.maximised{
+            overflow-y: auto;
+            margin-right: 22px;
+        }
+    }
+}

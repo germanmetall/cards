@@ -1,0 +1,20 @@
+<header class="header">
+    <span class="header__filter">Filter by 
+        <select class="header__select" (change)="onSelectChange()">
+            <option value="header">header</option>
+            <option value="author">author</option>
+        </select>
+        :
+    </span>
+    <span class="header__item" *ngFor="let filterType of filterObjects" (click)="activateFilter($event)" title="{{filterType}}">{{filterType}}</span>
+</header>
+
+<div class="cards groupView">
+    <app-card *ngFor="let card of filteredCS.Values()" [card]="card" (delete)="onDelete($event)" (edit)="onEdit($event)"></app-card>
+</div>
+
+<app-modal [card]="modalCard" (closeDialogBoxEmitter)="toggleDialogBox()" (makeActionEmitter)="makeActionDialogBox()"></app-modal>
+
+<footer class="footer">
+    <button class="footer__btn" (click)="toggleDialogBox('add')">Add new card</button>
+</footer>
