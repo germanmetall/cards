@@ -5,7 +5,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CardsComponent } from './cards/cards.component';
 import { CardComponent } from './cards/card/card.component';
-import { QuadricLayoutComponent } from './quadric-layout/quadric-layout.component';
 import { ModalComponent } from './modal/modal.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
@@ -15,7 +14,6 @@ import { environment } from '../environments/environment';
         AppComponent,
         CardsComponent,
         CardComponent,
-        QuadricLayoutComponent,
         ModalComponent
     ],
     imports: [

@@ -35,7 +35,7 @@ app-card{
         outline: none;
         border: 2px solid map-get($map: $palette, $key: "foreground");
         border-radius: 8px;
-        background: map-get($map: $palette, $key: "background_2");
+        background: transparent;
         font-weight: 800;
         font-size: 2rem;
         padding: 4px;
@@ -74,7 +74,7 @@ app-card{
         border: none;
         outline: none;
         background: map-get($map: $palette, $key: "foreground");
-        color: map-get($map: $palette, $key: "background_1");
+        color: #ddd;
         padding: 12px;
         margin: 12px;
         border-radius: 12px;

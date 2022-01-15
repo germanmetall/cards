@@ -23,7 +23,7 @@ export class CardComponent implements OnInit {
     }
 
     getColor():string{
-        return `rgba(${this.card.background["r"]}, ${this.card.background["g"]}, ${this.card.background["b"]}, ${this.card.background["a"]|255})`
+        return `rgba(${this.card.background["r"]}, ${this.card.background["g"]}, ${this.card.background["b"]}, ${this.card.background["a"]||0.4})`
     }
 
     ngOnInit(): void {
